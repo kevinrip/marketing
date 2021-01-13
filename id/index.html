@@ -12,6 +12,14 @@
             secureCookie: true
         });
     </script>
+
+    <script>
+        var searchParams = new URLSearchParams(window.location.href)
+        var id = searchParams.get('https://kevin.rip/marketing/id/?id');
+        heap.identify(id);
+    </script>
+
+
 </head>
 
 <body>
