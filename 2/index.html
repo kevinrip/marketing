@@ -18,9 +18,25 @@
 
     <script>
 
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        var value = readCookie(`_hp2_id.${appId}`);
+
+
         setTimeout(function() {
-            document.querySelector('#link').setAttribute('href', `https://kevintrankt.com/app/2?uid=${heap.userId}`);
+            document.querySelector('#link').setAttribute('href', `https://kevintrankt.com/app/2?uid=${value}`);
         }, 500)
+
+        
         
     </script>
 </body>
