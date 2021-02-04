@@ -31,10 +31,11 @@
             return null;
         }
 
-        var value = readCookie(`_hp2_id.${appId}`);
+   
 
 
         setTimeout(function() {
+            var value = readCookie(`_hp2_id.${appId}`);
             document.querySelector('#link').setAttribute('href', `https://kevintrankt.com/app/2?uid=${value}`);
         }, 500)
 
